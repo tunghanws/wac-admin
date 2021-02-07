@@ -43,13 +43,13 @@ const Menu: FC<MenuProps> = ({ onMenuClick, logout, dense = false }) => {
                 handleToggle={() => handleToggle('menuCatalog')}
                 isOpen={state.menuCatalog}
                 sidebarIsOpen={open}
-                name="pos.menu.catalog"
+                name="Happening"
                 icon={<happenings.icon />}
                 dense={dense}
             >
                 <MenuItemLink
                     to={`/happenings`}
-                    primaryText={translate(`resources.happenings.name`, {
+                    primaryText={translate(`Happenings`, {
                         smart_count: 2,
                     })}
                     leftIcon={<happenings.icon />}
@@ -59,7 +59,7 @@ const Menu: FC<MenuProps> = ({ onMenuClick, logout, dense = false }) => {
                 />
                 <MenuItemLink
                     to={`/categories`}
-                    primaryText={translate(`resources.categories.name`, {
+                    primaryText={translate(`Categories`, {
                         smart_count: 2,
                     })}
                     leftIcon={<categories.icon />}

@@ -11,7 +11,12 @@ import happenings from './components/happenings'
 function App() {
 	const apiUrl = 'http://localhost:3000';
 	return (
-		<Admin dataProvider={dataProvider(apiUrl)}>
+		<Admin 
+			dataProvider={dataProvider(apiUrl)}
+			loginPage={Login}
+			layout={Layout}
+			//dashboard={Dashboard}
+		>
 			<Resource name='happenings' {...happenings}/>
 		</Admin>
 	)

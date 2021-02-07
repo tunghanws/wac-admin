@@ -31,6 +31,76 @@
       "publishedAt": "2021-02-05"
     }
   ],
+  "happening": [
+	{
+	  "_id":"123",
+	  "title": "happening 1",
+	  "short_desciption": "this is happening",
+	  "long_description": "long desc is happening",
+	  "images": {
+		"corver": "https://www.google.com.vn/imgres?imgurl=https%3A%2F%2Fstatic.bongda24h.vn%2Fmedias%2Foriginal%2F2020%2F2%2F27%2Fde-bruyne.jpg&imgrefurl=https%3A%2F%2Fbongda24h.vn%2Ftan-man%2Fkevin-de-bruyne-bau-vat-cua-etihad-392-246062.html&tbnid=ZE5Qx49gEDmq0M&vet=12ahUKEwi7w8Tfr9XuAhWiJqYKHeXFC_0QMygHegUIARCzAQ..i&docid=EpcuFgyEG6oqrM&w=900&h=595&q=kenvin%20bryner&ved=2ahUKEwi7w8Tfr9XuAhWiJqYKHeXFC_0QMygHegUIARCzAQ",
+		"thumb": "https://www.google.com.vn/imgres?imgurl=https%3A%2F%2Fstatic.bongda24h.vn%2Fmedias%2Foriginal%2F2020%2F2%2F27%2Fde-bruyne.jpg&imgrefurl=https%3A%2F%2Fbongda24h.vn%2Ftan-man%2Fkevin-de-bruyne-bau-vat-cua-etihad-392-246062.html&tbnid=ZE5Qx49gEDmq0M&vet=12ahUKEwi7w8Tfr9XuAhWiJqYKHeXFC_0QMygHegUIARCzAQ..i&docid=EpcuFgyEG6oqrM&w=900&h=595&q=kenvin%20bryner&ved=2ahUKEwi7w8Tfr9XuAhWiJqYKHeXFC_0QMygHegUIARCzAQ",
+	  },
+	  "featured": true,
+	  "gallery": [
+		{
+		  "caption": "gallery 1",
+		  "url": "https://www.google.com.vn/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D137242514507394&imgrefurl=https%3A%2F%2Fwww.facebook.com%2FFan.KevinDeBruyne17.VietNam%2Fposts%2F137243281173984%2F&tbnid=_iPEv5DSoPILvM&vet=10CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI..i&docid=qXRVJ-z2hC-ViM&w=960&h=540&itg=1&q=kenvin%20bryner&ved=0CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI"
+		},
+		{
+		  "caption": "gallery 2",
+		  "url": "https://www.google.com.vn/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D137242514507394&imgrefurl=https%3A%2F%2Fwww.facebook.com%2FFan.KevinDeBruyne17.VietNam%2Fposts%2F137243281173984%2F&tbnid=_iPEv5DSoPILvM&vet=10CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI..i&docid=qXRVJ-z2hC-ViM&w=960&h=540&itg=1&q=kenvin%20bryner&ved=0CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI"
+		},
+		{
+		  "caption": "gallery 3",
+		  "url": "https://www.google.com.vn/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D137242514507394&imgrefurl=https%3A%2F%2Fwww.facebook.com%2FFan.KevinDeBruyne17.VietNam%2Fposts%2F137243281173984%2F&tbnid=_iPEv5DSoPILvM&vet=10CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI..i&docid=qXRVJ-z2hC-ViM&w=960&h=540&itg=1&q=kenvin%20bryner&ved=0CAMQxiAoAGoXChMI4PCC8K_V7gIVAAAAAB0AAAAAEAI"
+		},
+	  ],
+	  "category":["Sports","Love","Marrie"],
+	  "tags": ["tag 1","tag 2","tag 3"],
+	  "slug": "this is slug",
+	  "price": {
+		"membership": {
+		  "value": 10,
+		  "stripe": "price membership",
+		};
+		"non_membership": {
+		  "value": 100,
+		  "stripe": "price membership"
+		},
+	  },
+	   "locations": [
+		"name":"Singapore",
+		"id":"1",
+		"start_time":"06-02-2021"
+	   ]
+	   ,
+	   "start_time": 06-02-2021,
+	   "order": 1,
+	   "repeat": {
+		   "recurrance": "recurrance recurrance recurrance",
+		   "separation_count": 12,
+		   "day_of_week": [],
+		   "day_of_month": [],
+		   "end_date": true,
+		   "occurences": [
+			  {
+				"date": 06-02-2021,
+				"title": "title",
+				"desciption": "occurences desc"
+			  },
+			]
+	  },
+	   "occurrences": [
+		{
+		  "tittle": "occurrences";
+		  "start_time": "06-02-2021";
+		  "start_hour": 12;
+		  "start_min": 2;
+		},
+	  ]
+	}
+  ],
   "users": [
     {
       "id": "1",
