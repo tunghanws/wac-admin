@@ -11,7 +11,10 @@ import {
 	FormDataConsumer,
     SimpleFormIterator,
 	ImageField,
-	ImageInput
+	ImageInput,
+	SelectArrayInput,
+	ReferenceInput,
+	ChipField
 } from 'react-admin';
 import * as React from 'react';
 import { Happening } from '../../../types';
@@ -19,7 +22,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Card, CardContent, Typography } from '@material-ui/core';
 import HappeningImage from '../HappeningImage';
 
+//import LocationsInput from '.././LocationsInput'
 import SegmentsInput from '.././SegmentsInput';
+//import { S3FileInput } from '@fusionworks/ra-s3-input';
 
 const useStyles = makeStyles({
     root: { display: 'inline-block', marginTop: '1em', zIndex: 2 },
@@ -36,6 +41,12 @@ const useStyles = makeStyles({
 	imgGallery: {
 		display:'inline-block',
 		float:'left'
+	},
+	imgUpload:{
+		border:'1px dashed'
+	},
+	selectLocations:{
+		width: 350
 	}
 });
 
@@ -158,6 +169,7 @@ const IndexComponent = (props: any) => {
                                             formClassName={classes.widthDefault}
                                             validate={requiredValidate}
                                             style={{ marginRight: "12px" }}
+											fullWidth
                                         />
                                         <TextInput
                                             type="number"
@@ -165,6 +177,7 @@ const IndexComponent = (props: any) => {
                                             source="price.membership.value"
                                             formClassName={classes.widthDefault}
                                             validate={requiredValidate}
+											fullWidth
                                         />
                                     </div>
 
@@ -178,6 +191,7 @@ const IndexComponent = (props: any) => {
                                             formClassName={classes.widthDefault}
                                             validate={requiredValidate}
                                             style={{ marginRight: "12px" }}
+											fullWidth
                                         />
                                         <TextInput
                                             type="number"
@@ -185,6 +199,7 @@ const IndexComponent = (props: any) => {
                                             source="price.non_membership.value"
                                             formClassName={classes.widthDefault}
                                             validate={requiredValidate}
+											fullWidth
                                         />
                                     </div>
 
@@ -197,14 +212,12 @@ const IndexComponent = (props: any) => {
                                         
 										<FormDataConsumer>
 											{({ formData, ...rest }) => (
-												<SelectInput
-													source="localtions"
-													choices={
-														formData.allLocations
-															? formData.allLocations
-															: []
-													}
-													{...rest}
+												<SelectArrayInput 
+													source="locations" 
+													choices={formData.allLocations} 
+													optionText="name" 
+													optionValue="_id"
+													fullWidth
 												/>
 											)}
 										</FormDataConsumer>
@@ -220,6 +233,7 @@ const IndexComponent = (props: any) => {
                                                 <TextInput source="pos_lon" label="Position lon"/>
                                             </SimpleFormIterator>
                                         </ArrayInput>
+										
                                     </div>
 
                                 </Box>
@@ -239,6 +253,11 @@ const IndexComponent = (props: any) => {
 											<img src={formData && formData.images && formData.images.thumb} className={classes.img}/>
 										)}
 									</FormDataConsumer>
+									
+									<ImageInput source="pictures" label="Related pictures" accept="image/*" >
+										<ImageField source="images.thumb" title="title"/>
+									</ImageInput>
+									
 									
                                     <TextInput
                                         label="Corver"
