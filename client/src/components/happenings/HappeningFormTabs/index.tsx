@@ -25,6 +25,7 @@ import HappeningImage from '../HappeningImage';
 //import LocationsInput from '.././LocationsInput'
 import SegmentsInput from '.././SegmentsInput';
 //import { S3FileInput } from '@fusionworks/ra-s3-input';
+import { ManagerTagComponent } from './TagComponent/ManagerTag';
 
 const useStyles = makeStyles({
     root: { display: 'inline-block', marginTop: '1em', zIndex: 2 },
@@ -47,6 +48,9 @@ const useStyles = makeStyles({
 	},
 	selectLocations:{
 		width: 350
+	},
+	FormStyle:{
+		border: 'none'
 	}
 });
 
@@ -55,6 +59,7 @@ const IndexComponent = (props: any) => {
     const classes = useStyles();
     return (
         <FormWithRedirect
+			className={classes.FormStyle}
             {...props}
             render={(formProps: any) => (
                 <Card>
@@ -126,6 +131,7 @@ const IndexComponent = (props: any) => {
                                             />
                                         </Box>
                                     </Box>
+
                                     <Box display={{ xs: 'block', sm: 'flex' }}>
                                         <Box
                                             flex={1}
@@ -135,12 +141,6 @@ const IndexComponent = (props: any) => {
                                                 { id: 'Experiences', name: 'Experiences' },
                                             ]} />
                                         </Box>
-                                        <Box
-                                            flex={2}
-                                            mr={{ xs: 0, sm: '0.5em' }}
-                                        >
-                                            <SegmentsInput fullWidth />
-                                        </Box>
                                         <Box flex={2}>
                                             <NullableBooleanInput
                                                 source="featured"
@@ -149,6 +149,24 @@ const IndexComponent = (props: any) => {
                                                 falseLabel="False"
                                                 trueLabel="True"
                                             />
+                                        </Box>
+                                    </Box>
+
+                                    <Box display={{ xs: 'block', sm: 'flex' }}>
+                                        <Box
+                                            flex={1}
+                                            mr={{ xs: 0, sm: '0.5em' }}
+                                        >
+                                        <ManagerTagComponent/>
+                                        </Box>
+                                    </Box>
+									
+									<Box display={{ xs: 'block', sm: 'flex' }}>
+                                        <Box
+                                            flex={2}
+                                            mr={{ xs: 0, sm: '0.5em' }}
+                                        >
+                                            
                                         </Box>
                                     </Box>
 
@@ -221,18 +239,6 @@ const IndexComponent = (props: any) => {
 												/>
 											)}
 										</FormDataConsumer>
-										
-                                        <ArrayInput source="locations" lable="Locations">
-                                            <SimpleFormIterator>
-                                                <TextInput source="address_line1" label="Address Line 1"/>
-                                                <TextInput source="address_line2" label="Address Line 2"/>
-                                                <TextInput source="city" label="City"/>
-                                                <TextInput source="name" label="Name"/>
-                                                <TextInput source="tel" label="Telephone"/>
-                                                <TextInput source="pos_lat" label="Position lat"/>
-                                                <TextInput source="pos_lon" label="Position lon"/>
-                                            </SimpleFormIterator>
-                                        </ArrayInput>
 										
                                     </div>
 
