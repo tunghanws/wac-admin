@@ -4,9 +4,9 @@ const reverseDataResponse = (arrJson:any) => {
 		arrJson.value = Object.assign({},arrJson.value,{id:arrJson.value._id});
 		console.log("json value == ",arrJson.value);
 		return arrJson.value;
-	};
+	};	
 	for(let i = 0; i < arrJson.length; i++){
-		if(arrJson[i].hasOwnProperty("_id")){
+		if(arrJson[i] !== undefined && arrJson[i].hasOwnProperty("_id") && !arrJson[i].hasOwnProperty("id")){
 			arrJson[i] = Object.assign({},arrJson[i],{id:arrJson[i]._id});
 		}
 	}
