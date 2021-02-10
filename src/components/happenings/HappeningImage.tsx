@@ -25,7 +25,7 @@ const HappeningImage: FC<FieldProps<Happening>> = ({ record }) => {
     return (
         <Card className={classes.root}>
             <CardContent className={classes.content}>
-                <img src={record.images.thumb} alt="" className={classes.img} />
+                <img src={record && record.images && record.images.thumb} alt="" className={classes.img} />
             </CardContent>
         </Card>
     );

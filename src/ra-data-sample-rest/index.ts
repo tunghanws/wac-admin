@@ -75,7 +75,7 @@ export default (
 			arrJsonData = reverseDataResponse(arrJsonData);
             return {
                 data: arrJsonData,
-                total:29
+                total:50
                    // (countHeader === 'Content-Range' && headers !== undefined)
                      //   ? parseInt(
 					//		headers.get('content-range').split('/').pop(),10
@@ -148,11 +148,12 @@ export default (
         });
     },
 
+
     update: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${prefixGroup}/${params.id}`, {
-            method: 'PUT',
+            method: 'Post',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: reverseDataResponse((json.data !== undefined && json.data !== null)? json.data : json) })),
 
     // simple-rest doesn't handle provide an updateMany route, so we fallback to calling update n times instead
     updateMany: (resource, params) =>
@@ -170,7 +171,7 @@ export default (
             method: 'POST',
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({
-            data: { ...params.data, id: json.id },
+            data: { ...params.data, id: json.data.id },
         })),
 
     delete: (resource, params) =>
