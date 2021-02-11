@@ -24,7 +24,7 @@ import HappeningImage from '../HappeningImage';
 
 //import LocationsInput from '.././LocationsInput'
 import SegmentsInput from '.././SegmentsInput';
-//import { S3FileInput } from '@fusionworks/ra-s3-input';
+import { S3FileInput } from '@fusionworks/ra-s3-input';
 import { ManagerTagComponent } from './TagComponent/ManagerTag';
 
 const useStyles = makeStyles({
@@ -263,6 +263,18 @@ const IndexComponent = (props: any) => {
 									<ImageInput source="pictures" label="Related pictures" accept="image/*" >
 										<ImageField source="images.thumb" title="title"/>
 									</ImageInput>
+									
+									<S3FileInput
+									  source='images.thumb'
+									  apiRoot='localhost:5000/' // your api server
+									  fileCoverImg="someImgURL" // cover img for non-img files
+									  multipleFiles // allaw to save multiple files for that source
+									  uploadOptions={{
+										signingUrl: 'localhost:5000/s3/sign', // api point to your server for S3 signin,
+										s3path: 'yourS3FolderOnBucket/subFolderId', // path to folder from S3 where wil be saved file
+										multiple: true, // for selecting multiple files from file system
+									  }}
+									/>
 									
 									
                                     <TextInput
